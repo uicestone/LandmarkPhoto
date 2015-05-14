@@ -1,4 +1,24 @@
-<?php get_header() ?>
+<?php
+
+if(isset($_POST['submit'])){
+
+	include_once ABSPATH . 'wp-admin/includes/media.php';
+	include_once ABSPATH . 'wp-admin/includes/file.php';
+	include_once ABSPATH . 'wp-admin/includes/image.php';
+	
+	$photo_id = media_handle_upload('photo', 0);
+
+	wp_update_post(array(
+		'ID'=>$photo_id,
+		'post_title'=>$_POST['attendee_name'] . ' - ' . $_POST['phone'],
+	));
+
+	// header('Location: ');
+	exit;
+}
+
+get_header()
+?>
 
 <header></header>
 
@@ -14,10 +34,10 @@
 </div>
 
 <div id="attend-form" class="hide">
-	<form method="post">
+	<form method="post" enctype="multipart/form-data">
 		<div class="form-group" id="name">
 			<label class="form-label"><img src="<?=get_stylesheet_directory_uri()?>/images/text-name.png" alt="姓名"></label>
-			<input type="text" name="name">
+			<input type="text" name="attendee_name">
 		</div>
 		<div class="form-group" id="phone">
 			<label class="form-label"><img src="<?=get_stylesheet_directory_uri()?>/images/text-phone.png" alt="手机"></label>
@@ -33,7 +53,7 @@
 			<input type="file" name="photo" capture="camera">
 		</div>
 		<div class="form-actions">
-			<button type="submit" id="submit"><img src="<?=get_stylesheet_directory_uri()?>/images/button-text-submit.png" alt="提交"></button>
+			<button type="submit" name="submit" id="submit"><img src="<?=get_stylesheet_directory_uri()?>/images/button-text-submit.png" alt="提交"></button>
 		</div>
 	</form>
 </div>
@@ -43,16 +63,16 @@ jQuery(function($){
 
 	$('button#attend').on('click', function(){
 		$('body').addClass('attend-form-open');
-		$('#home-actions, #policy').hide();
+		$('#home-actions, #policy').fadeOut(200);
 		$('#attend-form').fadeIn(500);
 	});
 
 	$('button#show-policy').on('click', function(event){
-		$('#policy').toggle(500);
-		event.stopPropagation();
-	});
-
-	$('#policy').on('click', function(event){
+		if($('#policy').is(':visible')){
+			$('#policy').fadeOut(500);
+		}else{
+			$('#policy').fadeIn(500);
+		}
 		event.stopPropagation();
 	});
 

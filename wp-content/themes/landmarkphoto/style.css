@@ -58,7 +58,7 @@ footer #copyright {
 	bottom:0;
 	text-align: center;
 	width: 100%;
-	margin: 5px;
+	margin: 5px 0;
 }
 
 #cover {
@@ -170,7 +170,7 @@ button>img, label>img, .label>img {
 	background: rgb(2, 152, 10);
 }
 
-#attend-form input[name="name"] {
+#attend-form input[name="attendee_name"] {
 	border-color: rgb(2, 152, 10);
 }
 
