@@ -1,0 +1,242 @@
+/* 
+	Name: Landmark Photo
+	Author : Uice Lu <uicelu@gmail.com>
+*/
+
+body {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+}
+
+button {
+	border: none;
+}
+
+.hide {
+	display: none;
+}
+
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height:70pt;
+	padding: 10px 0px;
+	background: url('images/title.png') no-repeat center;
+	background-size: 70%;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right:0;
+	z-index: -1;
+}
+
+footer #bottom-background {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+
+footer #bottom-background img {
+	width: 100%;
+	opacity: 0.5;
+}
+
+footer #copyright {
+	position: absolute;
+	bottom:0;
+	text-align: center;
+	width: 100%;
+	margin: 5px;
+}
+
+#cover {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100px;
+	height: 50%;
+	background: url('images/cover.jpg') center no-repeat;
+	background-size: cover;
+	min-height: 200pt;
+}
+
+.attend-form-open #cover {
+	opacity: 0.5;
+}
+
+#home-actions {
+	position: absolute;
+	bottom: 40px;
+	left: 0;
+	right: 0;
+}
+
+#home-actions button {
+	display: block;
+	margin: 10px auto
+}
+
+button>img, label>img, .label>img {
+	width: 100%;
+}
+
+#home-actions button#attend {
+	width: 150pt;
+	padding: 10pt 20pt;
+	background: rgb(234, 49, 0);
+	margin-bottom: 20pt;
+}
+
+#home-actions button#show-policy {
+	width: 100pt;
+	padding: 7pt 13pt;
+	background: rgb(0, 159,236);
+}
+
+#policy {
+	position: absolute;
+	top: 11%;
+	bottom: 12%;
+	left: 7%;
+	right: 7%;
+	background: white;
+	border: 3px rgb(251, 132, 0) solid;
+	padding: 10px;
+	overflow-y: auto;
+	line-height: 1.4;
+}
+
+#policy h3 {
+	color: rgb(2, 152, 10);
+}
+
+#attend-form {
+	position: absolute;
+	top: 120px;
+	left: 8%;
+	right: 8%;
+	bottom: 7%;
+}
+
+#attend-form form {
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	right: 0;
+	left: 0;
+}
+
+.form-group {
+	margin-bottom: 15pt;
+}
+
+#attend-form label {
+	float: left;
+	padding: 8pt 6%;
+	width: 13%;
+	height: 12pt;
+	line-height: 17pt;
+	text-align: center;
+}
+
+#attend-form label img {
+	max-height: 12pt;
+	width:auto;
+}
+
+#attend-form input[type="text"], #attend-form input[type="number"] {
+	font-size: 18pt;
+	border: 2.5pt black solid;
+	height: 28pt;
+	width: 75%;
+	box-sizing: border-box;
+	padding: 0 5pt;
+	border-left: 0;
+}
+
+#attend-form #name{
+	background: rgb(2, 152, 10);
+}
+
+#attend-form input[name="name"] {
+	border-color: rgb(2, 152, 10);
+}
+
+#attend-form #phone {
+	background: rgb(0, 98, 190);
+}
+
+#attend-form input[name="phone"] {
+	border-color: rgb(0, 98, 190);
+}
+
+.label.notice {
+	background: rgb(234, 49, 0);
+	padding: 7pt 4%;
+}
+
+#upload-title {
+	padding: 5pt 28%;
+	background: rgb(252, 142, 29);
+}
+
+#photo-upload {
+    height: 47%;
+    background: rgb(225, 225, 225);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#photo-upload input[type="file"] {
+	position: relative;
+	top: -33px;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
+
+#photo-upload #button-text-upload {
+	width: 100pt;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -50pt;
+	margin-top: -7pt;
+}
+
+#photo-upload .preview {
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.form-actions {
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.form-actions button {
+	padding: 5pt 25pt;
+	width: 100pt;
+	background: green;
+	height: 36pt;
+}
