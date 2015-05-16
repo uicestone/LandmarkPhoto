@@ -100,6 +100,21 @@ jQuery(function($){
 			reader.readAsDataURL(this.files[0]);
 		}
 	});
+
+	$('form').on('submit', function(){
+		if($('[name="attendee_name"]').val() === ''){
+			alert('请填写姓名');
+			return false;
+		}
+		if($('[name="phone"]').val() === ''){
+			alert('请填写电话');
+			return false;
+		}
+		if($('[name="photo"]').val() === ''){
+			alert('请上传照片');
+			return false;
+		}
+	});
 	
 });
 </script>
