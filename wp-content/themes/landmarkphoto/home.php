@@ -13,8 +13,6 @@ if(isset($_POST['submit'])){
 		'post_title'=>$_POST['attendee_name'] . ' - ' . $_POST['phone'],
 	));
 
-	// header('Location: ');
-	exit;
 }
 
 get_header()
@@ -22,6 +20,13 @@ get_header()
 
 <header></header>
 
+<?php if(isset($_POST['submit'])){ ?>
+<div id="completed">
+	<img src="<?=get_stylesheet_directory_uri()?>/images/qrcode.jpg">
+	<h1>谢谢关注！</h1>
+	<h1>请继续关注《申》报官方微信，<br>入围作品将进行网络投票</h1>
+</div>
+<?php }else{ ?>
 <div id="cover"></div>
 
 <div id="home-actions">
@@ -57,6 +62,7 @@ get_header()
 		</div>
 	</form>
 </div>
+<?php } ?>
 
 <script type="text/javascript">
 jQuery(function($){
